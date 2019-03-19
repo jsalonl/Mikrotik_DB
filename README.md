@@ -2,6 +2,8 @@
 
 Permite capturar datos de usuarios que vayan a registrarse, para que así puedan acceder a internet gratuito.
 
+
+
 ### Requisitos:
 
 1. Servidor Apache, MySQL y PHP 5.4 en adelante (Hosting externo).
@@ -163,4 +165,4 @@ Permite capturar datos de usuarios que vayan a registrarse, para que así puedan
       url: 'http://dominio.com/process/ajaxUser.php',
       ```
 
-      
+8. Se puede cambiar el video, entrando al directorio **/video** al igual que el logotipo entrando al directorio **/img** y cambiando la imagen **logo.jpg**
