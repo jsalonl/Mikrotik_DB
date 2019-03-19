@@ -22,9 +22,11 @@ Permite capturar datos de usuarios que vayan a registrarse, para que así puedan
 
 ### Configuración previa:
 
-1. Crear base de datos, usuario de base de datos, contraseña y asignar permisos.
+1. Descargue los archivos, puede borrar la carpeta **/examples** que incluye solo las imágenes de apoyo.
 
-2. Popular la base de datos anteriormente creada.
+2. Crear base de datos, usuario de base de datos, contraseña y asignar permisos.
+
+3. Popular la base de datos anteriormente creada.
 
    ```mysql
    CREATE TABLE `mikrotiks` (
@@ -57,7 +59,7 @@ Permite capturar datos de usuarios que vayan a registrarse, para que así puedan
    COMMIT;
    ```
 
-3. Configurar archivo conf.php
+4. Configurar archivo conf.php
 
    ```php
    define("DB_DB",""); //Define nombre base de datos
@@ -68,7 +70,7 @@ Permite capturar datos de usuarios que vayan a registrarse, para que así puedan
    define("DB_DRIVER","mysql"); //Define driver de base de datos
    ```
 
-4. Configurar Mikrotik, se muestra un ejemplo estándar, se deben cambiar las variables en cada caso particular.
+5. Configurar Mikrotik, se muestra un ejemplo estándar, se deben cambiar las variables en cada caso particular.
 
    ```python
    #Direccion del servidor donde esta alojado los archivos php
@@ -151,11 +153,11 @@ Permite capturar datos de usuarios que vayan a registrarse, para que así puedan
    set name=$Name
    ```
 
-5. Subir la carpeta, exceptuando la subcarpeta **/process** al directorio **/hotspot** del mikrotik
+6. Subir la carpeta, exceptuando la subcarpeta **/process** al directorio **/hotspot** del mikrotik
 
-6. Subir la carpeta **/process** al servidor donde esta alojado PHP+Apache+MySQL.
+7. Subir la carpeta **/process** al servidor donde esta alojado PHP+Apache+MySQL.
 
-7. Editar el archivo login.html de la carpeta **/hotspot**
+8. Editar el archivo login.html de la carpeta **/hotspot**
 
    1. La línea 128 contiene el ID del mikrotik, este valor debe ser igual al registrado en la tabla **mikrotiks** para evitar su duplicación y poder separar los datos después.
 
@@ -175,4 +177,4 @@ Permite capturar datos de usuarios que vayan a registrarse, para que así puedan
       url: 'http://dominio.com/process/ajaxUser.php',
       ```
 
-8. Se puede cambiar el video, entrando al directorio **/video** al igual que el logotipo entrando al directorio **/img** y cambiando la imagen **logo.jpg**
+9. Se puede cambiar el video, entrando al directorio **/video** al igual que el logotipo entrando al directorio **/img** y cambiando la imagen **logo.jpg**
