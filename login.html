@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <title>Internet Gratuito</title>
+    <style>
+    	/* Sticky footer styles
+			-------------------------------------------------- */
+			html {
+			  position: relative;
+			  min-height: 100%;
+			}
+			body {
+			  /* Margin bottom by footer height */
+			  background: url(img/fondo.jpg) no-repeat center center fixed;
+    		-webkit-background-size: cover;
+    		-moz-background-size: cover;
+    		-o-background-size: cover;
+    		background-size: cover;
+			  margin-bottom: 60px;
+			}
+			.footer {
+			  position: absolute;
+			  bottom: 0;
+			  width: 100%;
+			  /* Set the fixed height of the footer here */
+			  height: 60px;
+			  line-height: 60px; /* Vertically center the text there */
+			  /*background-color: #f5f5f5;*/
+			}
+
+
+			/* Custom page CSS
+			-------------------------------------------------- */
+			/* Not required for template or sticky footer method. */
+
+			body > .container {
+			  padding: 60px 15px 0;
+			}
+
+			.footer > .container {
+			  padding-right: 15px;
+			  padding-left: 15px;
+			}
+
+			code {
+			  font-size: 80%;
+			}
+			#entrar{
+				padding: 1% 13%;
+				text-transform: uppercase;
+        display:none;
+			}
+      .to-show, .to-show-2{
+        display:none;
+      }
+    </style>
+  </head>
+  <body>
+  	$(if chap-id)
+		<form name="sendin" action="$(link-login-only)" method="post">
+			<input type="hidden" name="username" />
+			<input type="hidden" name="password" />
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
+		</form>
+		<script type="text/javascript" src="/md5.js"></script>
+		<script type="text/javascript">
+		<!--
+		    function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+			document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+			document.sendin.submit();
+			return false;
+		    }
+		//-->
+		</script>
+  $(endif)
+    <div class="container py-0 mt-0">
+      <div class="row justify-content-center mx-auto text-center pb-2">
+        <div class="col-md-6 mx-auto">
+          <img src="img/logo.jpg" width="250">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6 mx-auto">
+          <video width="100%" height="240" autoplay>
+            <source src="video/video.mp4" type="video/mp4">
+            Tu navegador no soporta este video
+          </video>
+          <br>
+        </div>
+      </div>
+      <div class="row justify-content-center hidding">
+        <div class="col-md-5 mx-auto">
+          <div class="card">
+            <div class="card-body text-center">
+                Por favor espere <label id="countdown"></label> Minutos
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container text-center">
+      	<button type="button" disabled class="btn btn-info btn-lg" id="entrar" data-toggle="modal" data-target="#entrarModal">Conectarse</button>
+      </div>
+    </footer>
+    <!-- Modal -->
+		<div class="modal fade" id="entrarModal" tabindex="-1" role="dialog" aria-labelledby="entrarModal" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="entrarModalLabel">Acceso a Internet</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+            <div class="to-hide">
+              <h4>Ingrese su número de documento</h4>
+              <form id="Form">
+                <input type="hidden" class="form-control" id="MktId" value="1">
+                <div class="form-group">
+                  <label for="Cedula">Cédula: </label>
+                  <input type="tel" class="form-control" id="Cedula">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" disabled id="Validate">Validar</button>
+              </form>
+            </div>
+            <div class="to-show">
+              <h4>Registrese para internet gratis</h4>
+              <form id="Register">
+                <div class="form-group">
+                  <label for="Cedula2">Cédula: </label>
+                  <input type="tel" class="form-control" id="Cedula2">
+                </div>
+                <div class="form-group">
+                  <label for="Name">Nombre: </label>
+                  <input type="text" class="form-control" id="Name" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="Phone">Telefono: </label>
+                  <input type="tel" class="form-control" id="Phone" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="Email">Correo: </label>
+                  <input type="email" class="form-control" id="Email" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="Birthday">Edad: </label>
+                    <input type="tel" class="form-control" id="Birthday" placeholder="">
+                  </div>
+                <button type="submit" class="btn btn-primary btn-block" id="Registrarse">Registrarse</button>
+              </form>
+            </div>
+            <div class="to-show-2">
+              $(if trial == 'yes')
+              <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" class="btn btn-success btn-block">Internet Gratis</a>
+              <hr>
+              $(endif)
+            </div>
+		      </div>
+		      <div class="modal-footer">
+		      </div>
+		    </div>
+		  </div>
+		</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/gijgo.min.js" type="text/javascript"></script>
+    <script src="js/jquery.countdown.js"></script>
+    <script>
+      $('Document').ready(function(){
+        var seconds = 25; //número de segundos a contar
+        function secondPassed() {
+          var minutes = Math.round((seconds - 30)/60);
+          var remainingSeconds = seconds % 60;
+          if (remainingSeconds < 10) { 
+            remainingSeconds = "0" + remainingSeconds; 
+          } 
+          document.getElementById('countdown').innerHTML = minutes + ":" +     remainingSeconds; 
+          if(seconds == 0){ 
+            clearInterval(countdownTimer); 
+            $('.hidding').fadeOut();
+            $('#entrar').fadeIn().prop('disabled',false);  
+          }else{ 
+            seconds--; 
+          } 
+        } 
+        var countdownTimer = setInterval(secondPassed, 1000);
+        $('#Cedula').keyup(function(){
+          if($(this).val().length<5){
+            $('#Validate').prop('disabled',true);
+            $(this).removeClass('is-valid').addClass('is-invalid');
+          }else{
+            $('#Validate').prop('disabled',false);
+            $(this).removeClass('is-invalid').addClass('is-valid');
+          }
+        });
+        $('#Form').submit(function(e){
+          e.preventDefault();
+          identification = btoa(btoa($('#Cedula').val()));
+          mktid = btoa(btoa($('#MktId').val()));
+          //Envio AJAX
+          $.ajax({
+            data: 'action=validate&identification='+identification+'&mktid='+mktid,
+            type: 'POST',
+            dataType: 'JSON',
+            url: 'http://wificolombia.net/spot/process/ajaxUser.php',
+            crossDomain: true,
+            beforeSend: function(){
+              $('#Validate').prop('disabled',true);
+            },
+            success:function(response){
+              if(response.status=='success'){
+                alert('Bienvenido '+response.datos.name);
+                $('.to-hide').hide();
+                $('.to-show-2').show();
+                $('#Validate').prop('disabled',true);
+                $('#Cedula').val('').addClass('is-invalid');
+              }else if(response.status=='unregister'){
+                alert(response.message);
+                $('#Validate').prop('disabled',false);
+              }else{
+                $('#Cedula').removeClass('is-valid').addClass('is-invalid');
+                $('.to-show').show();
+                $('.to-hide').hide();
+                $('#Cedula2').val(atob(atob(response.datos.cedula)));
+                alert(response.message);
+              }
+            },
+            error:function(e){
+              console.log(e);
+            }
+          });
+          //Termina Envio
+        });
+        $('#Register').submit(function(e){
+          e.preventDefault();
+          identification = btoa(btoa($('#Cedula2').val()));
+          name = btoa(btoa($('#Name').val()));
+          phone = btoa(btoa($('#Phone').val()));
+          email = btoa(btoa($('#Email').val()));
+          birthday = btoa(btoa($('#Birthday').val()));
+          mktid = btoa(btoa($('#MktId').val()));
+          //Envio AJAX
+          $.ajax({
+            data: 'action=register&identification='+identification+'&name='+name+'&email='+email+'&phone='+phone+'&birthday='+birthday+'&mktid='+mktid,
+            type: 'POST',
+            dataType: 'JSON',
+            url: 'http://wificolombia.net/spot/process/ajaxUser.php',
+            beforeSend: function(){
+              $('#Registrarse').prop('disabled',true);
+            },
+            success:function(response){
+              if(response.status=='success'){
+                alert(response.message);
+                $('.to-hide').hide();
+                $('.to-show').hide();
+                $('.to-show-2').show();
+                $('#Registrarse').prop('disabled',false);
+              }else{
+                $('.to-show').show();
+                $('.to-hide').hide();
+                $('#Registrarse').prop('disabled',false);
+                alert(response.message);
+              }
+            },
+            error:function(e){
+              console.log(e);
+            }
+          });
+          //Termina Envio
+        });
+      });
+    </script>
+  </body>
+</html>
