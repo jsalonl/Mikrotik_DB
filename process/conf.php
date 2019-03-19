@@ -5,16 +5,9 @@ ini_set("log_errors", "0");
 ini_set("error_log", "./");
 date_default_timezone_set("America/Bogota");
 
-//Mail Settings
-define("HOST_MAIL","smtp.gmail.com");
-define("USER_MAIL","usuario");
-define("PASS_MAIL","clave");
-define("PROTOCOL_MAIL","tls");
-define("PORT_MAIL","587");
-
 //Database
-define("DB_DB","hotspot"); //Define nombre base de datos
-define("DB_USER","root"); //Define usuario de base de datos
+define("DB_DB",""); //Define nombre base de datos
+define("DB_USER",""); //Define usuario de base de datos
 define("DB_PASS",""); //Define contraseña base de datos
 define("DB_HOST","127.0.0.1"); //Define host base de datos
 define("DB_PORT","3306"); //Define puerto base de datos
