@@ -2,7 +2,7 @@
 
 Permite capturar datos de usuarios que vayan a registrarse, para que así puedan acceder a internet gratuito.
 
-![](https://raw.githubusercontent.com/jsalonl/Mikrotik_DB/master/example/2.png?token=ALrfQ4W6PSbOvVK-VB0SOvScMouO5oMWks5ckT-ZwA%3D%3D)
+![](example/2.png)
 
 ![](https://raw.githubusercontent.com/jsalonl/Mikrotik_DB/master/example/3.png?token=ALrfQ4J6yw9aTtBX4Qsm8uP6MWrF_DVXks5ckT_FwA%3D%3D)
 
